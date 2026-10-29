@@ -1,0 +1,1013 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#0b0e24">
+    <meta name="description"
+        content="Shayne Nicole Lim — a creative universe of 3D art, character design, illustrations, animation and graphic design.">
+    <title>Shayne Lim ✦ A Little Universe of Art</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #0b0e24;
+            --panel: #151935;
+            --ink: #f6f2ff;
+            --muted: #b6b4d4;
+            --violet: #be9bff;
+            --pink: #ffc1e9;
+            --blue: #91d9ff;
+            --border: #ffffff1f
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: 'DM Sans', sans-serif;
+            overflow-x: hidden
+        }
+
+        body:before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            background: radial-gradient(ellipse at 81% 5%, #51277b4f, transparent 35%), radial-gradient(ellipse at 3% 47%, #29397744, transparent 38%), linear-gradient(#0b0e24, #10112b 75%, #0b0d22)
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        button {
+            font: inherit
+        }
+
+        button:focus-visible,
+        a:focus-visible {
+            outline: 2px solid var(--blue);
+            outline-offset: 4px
+        }
+
+        .stars {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden
+        }
+
+        .star {
+            position: absolute;
+            display: block;
+            border-radius: 50%;
+            background: #fff;
+            animation: twinkle var(--dur, 3s) ease-in-out infinite;
+            animation-delay: var(--delay, 0s);
+            box-shadow: 0 0 9px #e9cafa7d
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: .17;
+                transform: scale(.7)
+            }
+
+            50% {
+                opacity: .95;
+                transform: scale(1.3)
+            }
+        }
+
+        .shoot {
+            position: fixed;
+            top: 15%;
+            left: 110%;
+            width: 115px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #f0deff);
+            transform: rotate(-25deg);
+            animation: shoot 13s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0
+        }
+
+        @keyframes shoot {
+
+            0%,
+            65% {
+                opacity: 0;
+                translate: 0 0
+            }
+
+            68% {
+                opacity: 1
+            }
+
+            77% {
+                opacity: 0;
+                translate: -125vw 53vh
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+
+        .wrap {
+            position: relative;
+            z-index: 1;
+            max-width: 1220px;
+            padding: 0 34px;
+            margin: auto
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 93px;
+            gap: 20px
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            height: 48px;
+        }
+
+        .logo img {
+            height: 250px;
+            width: 150px;
+	    object-fit: contain
+        }
+
+        .logo span,
+        .gradient {
+            background: linear-gradient(95deg, var(--pink), var(--violet), var(--blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+            font-size: 13px;
+            color: #e3deff
+        }
+
+        .nav-links a:hover {
+            color: var(--pink)
+        }
+
+        .pill {
+            border: 1px solid #d9b4ff88;
+            border-radius: 100px;
+            background: #c7a3ff13;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 12px 19px;
+            cursor: pointer;
+            transition: .25s
+        }
+
+        .pill:hover {
+            transform: translateY(-2px);
+            background: #c7a3ff31
+        }
+
+        .mobile-menu {
+            display: none
+        }
+
+        .hero {
+            min-height: 690px;
+            display: grid;
+            grid-template-columns: 1.06fr .94fr;
+            align-items: center;
+            gap: 20px;
+            padding-top: 45px;
+            padding-bottom: 80px
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            background: #b9a9f012;
+            border: 1px solid #ffffff1c;
+            padding: 10px 15px;
+            border-radius: 100px;
+            color: #dfcbfc;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase
+        }
+
+        .hero h1 {
+            font-family: Outfit, sans-serif;
+            font-size: clamp(66px, 8.2vw, 112px);
+            font-weight: 800;
+            line-height: .96;
+            letter-spacing: -7px;
+            margin: 28px 0 20px
+        }
+
+        .hero h1 .small {
+            display: block;
+            font-size: clamp(48px, 6vw, 78px);
+            letter-spacing: -4px;
+            color: #f7f4ff
+        }
+
+        .sub {
+            max-width: 510px;
+            font-size: 17px;
+            line-height: 1.85;
+            color: var(--muted)
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 30px
+        }
+
+        .primary {
+            border: 1px solid #efc7ff;
+            background: linear-gradient(120deg, #d6aaf6, #a4bcfa);
+            color: #202039;
+            font-weight: 800;
+            box-shadow: 0 10px 30px #b894f83b
+        }
+
+        .primary:hover {
+            background: #f0cfff
+        }
+
+        .micro {
+            font-size: 13px;
+            color: #b5b3d0;
+            margin-top: 22px
+        }
+
+        .visual {
+            position: relative;
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .orbit {
+            width: min(435px, 85vw);
+            aspect-ratio: 1;
+            border: 1px solid #e6bbff32;
+            border-radius: 50%;
+            position: relative;
+            display: grid;
+            place-items: center;
+            box-shadow: 0 0 0 34px #c3b7fd08, 0 0 0 75px #b5bbff05;
+            background: radial-gradient(circle, #a990ff17, transparent 65%)
+        }
+
+        .moon {
+            width: 78%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: radial-gradient(circle at 32% 27%, #ffe9fb, #d3c0ff 44%, #8c83c6 100%);
+            box-shadow: 0 0 68px #af9fff70, 0 0 150px #b88be630;
+            position: relative;
+            overflow: hidden
+        }
+
+        .moon:before,
+        .moon:after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            background: #a09ac526;
+            box-shadow: inset 2px 3px 8px #6864952b
+        }
+
+        .moon:before {
+            width: 25%;
+            height: 25%;
+            top: 25%;
+            left: 17%
+        }
+
+        .moon:after {
+            width: 16%;
+            height: 16%;
+            top: 53%;
+            right: 18%
+        }
+
+        .moon-text {
+            position: absolute;
+            top: 44%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: #3e335b;
+            font-family: Outfit, sans-serif;
+            font-weight: 800;
+            font-size: 35px;
+            letter-spacing: -2px;
+            text-shadow: 0 1px #fff9
+        }
+
+        .floating {
+            position: absolute;
+            animation: bob 5s ease-in-out infinite
+        }
+
+        .float-1 {
+            width: 42%;
+            left: -9%;
+            bottom: 9%;
+            transform: rotate(-7deg);
+            filter: drop-shadow(0 16px 25px #0303159c)
+        }
+
+        .float-2 {
+            width: 32%;
+            right: -7%;
+            top: 2%;
+            animation-delay: -2s;
+            filter: drop-shadow(0 16px 22px #070310a8)
+        }
+
+        .float-3 {
+            width: 20%;
+            right: -5%;
+            bottom: 4%;
+            animation-delay: -3s;
+            filter: drop-shadow(0 15px 19px #000a)
+        }
+
+        @keyframes bob {
+
+            0%,
+            100% {
+                translate: 0 0
+            }
+
+            50% {
+                translate: 0 -16px
+            }
+        }
+
+        .sparkle {
+            position: absolute;
+            font-size: 30px;
+            color: #ffd4f7;
+            text-shadow: 0 0 18px #f0d6ff
+        }
+
+        .section {
+            padding: 94px 0
+        }
+
+        .section-top {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 35px
+        }
+
+        .overline {
+            color: var(--pink);
+            letter-spacing: 3px;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase
+        }
+
+        .section h2 {
+            font: 800 clamp(36px, 4.5vw, 60px)/1.1 Outfit, sans-serif;
+            letter-spacing: -2px;
+            margin: 12px 0
+        }
+
+        .section-lead {
+            color: var(--muted);
+            line-height: 1.7;
+            max-width: 540px
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-bottom: 28px
+        }
+
+        .filter {
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: #fff08;
+            color: #d4d1e7;
+            padding: 10px 17px;
+            cursor: pointer;
+            font-size: 13px
+        }
+
+        .filter[aria-pressed=true] {
+            background: #d6bbff;
+            color: #1c1737;
+            border-color: #d6bbff;
+            font-weight: 800
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px
+        }
+
+        .project {
+            min-width: 0;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            background: linear-gradient(150deg, #28244888, #14152caa);
+            overflow: hidden;
+            transition: transform .25s, border-color .25s;
+            cursor: pointer;
+            position: relative;
+            text-align: left;
+            padding: 0;
+            color: inherit
+        }
+
+        .project:hover {
+            transform: translateY(-6px);
+            border-color: #c39ffb91
+        }
+
+        .thumb {
+            height: 245px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #252345, #10152f)
+        }
+
+        .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: scale .5s
+        }
+
+        .project:hover .thumb img {
+            scale: 1.07
+        }
+
+        .project[data-fit=contain] img {
+            object-fit: contain;
+            padding: 12px
+        }
+
+        .project .info {
+            padding: 21px 22px 24px
+        }
+
+        .category {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #e8b2f8;
+            font-weight: 800
+        }
+
+        .project h3 {
+            font: 700 21px Outfit, sans-serif;
+            margin: 8px 0 6px
+        }
+
+        .project p {
+            font-size: 13px;
+            line-height: 1.5;
+            color: var(--muted);
+            margin: 0
+        }
+
+        .view {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #101027ac;
+            backdrop-filter: blur(12px);
+            border: 1px solid #ffffff4a;
+            padding: 8px 12px;
+            border-radius: 99px;
+            font-size: 12px
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 50px;
+            align-items: center
+        }
+
+        .about-card {
+            padding: 32px 28px;
+            border-radius: 32px;
+            border: 1px solid #ffffff32;
+            background: radial-gradient(circle at 40% 20%, #8355b544, transparent 55%), linear-gradient(150deg, #262144, #17182f);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center
+        }
+
+        .about-card .bigglyph {
+            font-size: 105px;
+            line-height: 1
+        }
+
+        .about-card h3 {
+            font: 700 28px Outfit, sans-serif;
+            margin: 18px 0 8px;
+            text-align: center;
+        }
+
+        .about-card p {
+            color: var(--muted);
+            line-height: 1.6;
+            text-align: center;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* About Me portrait — corrected sizing */
+        .about-portrait-card {
+            width: 100%;
+            max-width: 380px;
+            margin: 0 auto;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .portrait-glow {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: 0 0 35px rgba(188, 139, 255, 0.35);
+            border: 2px solid #ffffff33;
+        }
+
+        .shayne-portrait {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 24px
+        }
+
+        .chip {
+            padding: 10px 13px;
+            background: #c5b0f016;
+            border: 1px solid #ffffff25;
+            border-radius: 999px;
+            font-size: 12px;
+            color: #e0d7f5
+        }
+
+        .feature {
+            background: linear-gradient(120deg, #211b41aa, #161932aa);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            padding: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 22px
+        }
+
+        .feature h2 {
+            margin: 7px 0 10px
+        }
+
+        .feature p {
+            margin: 0;
+            color: var(--muted)
+        }
+
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 28px 0 36px;
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+            color: #aba7c8;
+            font-size: 13px
+        }
+
+        .hidden {
+            display: none !important
+        }
+
+        dialog {
+            border: 1px solid #ffffff4a;
+            border-radius: 24px;
+            background: #15162b;
+            color: var(--ink);
+            padding: 0;
+            max-width: min(960px, 94vw);
+            max-height: 90vh;
+            box-shadow: 0 30px 150px #000d
+        }
+
+        dialog::backdrop {
+            background: #050614c9;
+            backdrop-filter: blur(8px)
+        }
+
+        .modal-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            padding: 17px 24px;
+            border-bottom: 1px solid #ffffff22
+        }
+
+        .modal-head h3 {
+            font: 700 20px Outfit;
+            margin: 0
+        }
+
+        .close {
+            border: 1px solid #ffffff40;
+            background: #ffffff12;
+            color: white;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            cursor: pointer;
+            font-size: 20px
+        }
+
+        .modal-media {
+            min-width: min(860px, 85vw);
+            display: grid;
+            place-items: center;
+            background: #090c1b
+        }
+
+        .modal-media img,
+        .modal-media video {
+            display: block;
+            max-width: 100%;
+            max-height: 68vh;
+            object-fit: contain
+        }
+
+        .modal-caption {
+            padding: 17px 24px;
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        .reduce {
+            position: absolute;
+            left: -9999px
+        }
+
+        @media(max-width:850px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 35px;
+                text-align: center
+            }
+
+            .sub {
+                margin: auto
+            }
+
+            .actions {
+                justify-content: center
+            }
+
+            .visual {
+                min-height: 410px;
+                order: -1
+            }
+
+            .orbit {
+                width: 310px
+            }
+
+            .hero h1 {
+                font-size: 76px
+            }
+
+            .gallery {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .about {
+                grid-template-columns: 1fr;
+                gap: 25px
+            }
+
+            .nav-links {
+                gap: 16px
+            }
+
+            .nav-links a:not(.pill) {
+                display: none
+            }
+        }
+
+        @media(max-width:550px) {
+            .wrap {
+                padding: 0 20px
+            }
+
+            .nav {
+                min-height: 76px
+            }
+
+            .logo {
+                height: 36px;
+            }
+
+            .logo img {
+                max-height: 36px;
+            }
+
+            .hero {
+                padding-bottom: 30px
+            }
+
+            .hero h1 {
+                font-size: 62px;
+                letter-spacing: -4px
+            }
+
+            .portrait-glow {
+                width: 160px;
+                height: 160px;
+            }
+
+            .hero h1 .small {
+                font-size: 49px
+            }
+
+            .visual {
+                min-height: 330px
+            }
+
+            .orbit {
+                width: 245px
+            }
+
+            .moon-text {
+                font-size: 24px
+            }
+
+            .gallery {
+                grid-template-columns: 1fr
+            }
+
+            .thumb {
+                height: 245px
+            }
+
+            .section {
+                padding: 70px 0
+            }
+
+            .section-top {
+                display: block
+            }
+
+            .feature {
+                display: block
+            }
+
+            .feature .pill {
+                margin-top: 24px
+            }
+
+            .about-card {
+                padding: 24px;
+            }
+
+            .footer {
+                display: block
+            }
+
+            .footer span {
+                display: block;
+                margin: 8px 0
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+
+            *,
+            *:before,
+            *:after {
+                animation-duration: .01ms !important;
+                transition-duration: .01ms !important;
+                scroll-behavior: auto !important
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stars" id="stars" aria-hidden="true"></div>
+    <div class="shoot" aria-hidden="true"></div>
+    <div class="wrap">
+        <header class="nav"><a href="#top" class="logo"><img src="assets/logo.png" alt="Logo"></a>
+            <nav class="nav-links" aria-label="Main navigation"><a href="#work">My universe</a><a href="#about">About
+                    me</a><a href="#recognition">Little wins</a><a href="#connect" class="pill">Say hello ↗</a></nav>
+        </header>
+        <main id="top">
+            <section class="hero">
+                <div class="hero-copy"><span class="eyebrow">✧ Welcome to my little universe ✧</span>
+                    <h1><span class="small">Hello, I'm</span><span class="gradient">Shayne.</span></h1>
+                    <p class="sub">I make little worlds, lovable characters, and creative things that sparkle. A bit of
+                        imagination, a lot of late-night ideas, and a whole sky of possibilities. ✨</p>
+                    <div class="actions"><a class="pill primary" href="#work">Explore my universe ↗</a><a class="pill"
+                            href="#about">Get to know me ✦</a></div>
+                    <p class="micro">✦ Keep scrolling, the stars have stories to tell.</p>
+                </div>
+                <div class="visual" aria-label="A glowing moon surrounded by floating original artwork">
+                    <div class="orbit">
+                        <div class="moon">
+                            <div class="moon-text">made to<br>shine ✦</div>
+                        </div><img class="floating float-1" src="assets/dog.png"
+                            alt="Whimsical mushroom diorama by Shayne"><img class="floating float-2"
+                            src="assets/fox.png" alt="Pixel-art fox by Shayne"><img class="floating float-3"
+                            src="assets/rabbit.png" alt="Pixel-art bunny by Shayne"><span class="sparkle"
+                            style="left:4%;top:9%">✧</span><span class="sparkle" style="right:0%;top:45%">✳</span><span
+                            class="sparkle" style="left:18%;bottom:-9%">✦</span>
+                    </div>
+                </div>
+            </section>
+            <section id="work" class="section">
+                <div class="section-top">
+                    <div><span class="overline">✦ My creative galaxy</span>
+                        <h2>Things I've <span class="gradient">made.</span></h2>
+                        <p class="section-lead">Every piece is a little star in my creative universe. Pick a
+                            constellation to explore.</p>
+                    </div>
+                    <div class="micro">✦ Click a project to look closer</div>
+                </div>
+                <div class="filters" role="group" aria-label="Filter portfolio projects"><button class="filter"
+                        data-filter="all" aria-pressed="true">All my stars ✦</button><button class="filter"
+                        data-filter="3d" aria-pressed="false">3D Worlds</button><button class="filter"
+                        data-filter="characters" aria-pressed="false">Characters & 2D</button><button class="filter"
+                        data-filter="graphics" aria-pressed="false">Graphic Design</button><button class="filter"
+                        data-filter="motion" aria-pressed="false">Animation</button></div>
+                <div class="gallery" id="gallery"></div>
+            </section>
+            <section class="section" id="about">
+                <div class="about">
+                    <div class="about-card about-portrait-card">
+                        <div class="portrait-glow">
+                            <img
+                            src="assets/shayne-portrait.png"
+                            alt="Portrait of Shayne Nicole Lim"
+                            class="shayne-portrait"
+                            >
+                        </div>
+                        <h3>A head full of stars.</h3>
+                        <p>And ideas that won't stay still. From cozy 3D environments to quirky character designs, I
+                            love bringing imagination into the real (and digital) world.</p><span class="sparkle"
+                            style="right:12%;top:13%">✦</span>
+                    </div>
+                    <div><span class="overline">✦ Meet the artist</span>
+                        <h2>A little about <span class="gradient">me.</span></h2>
+                        <p class="section-lead">Hi, I'm <strong style="color:#fff">Shayne Nicole Lim</strong>! My
+                            portfolio brings together my adventures in 3D modeling, world-building, 2D character design,
+                            animation, and visual graphics.</p>
+                        <p class="section-lead">I love experimenting with different styles—from dreamy environments and
+                            charming characters to bold, expressive posters. Every project is another chance to learn
+                            something new and make something fun.</p>
+                        <div class="chips"><span class="chip">✧ 3D modeling</span><span class="chip">✧ Character
+                                design</span><span class="chip">✧ Digital illustration</span><span class="chip">✧
+                                Animation</span><span class="chip">✧ Graphic design</span><span class="chip">✧ Pixel
+                                art</span></div>
+                    </div>
+                </div>
+            </section>
+            <section class="section" id="recognition"><span class="overline">✦ Little wins, big smiles</span>
+                <h2>Still <span class="gradient">growing.</span></h2>
+                <p class="section-lead">A few milestones and certificates from along the way.</p>
+                <div class="gallery" id="cert-gallery"></div>
+            </section>
+            <section class="section" id="connect">
+                <div class="feature">
+                    <div><span class="overline">✦ Our stars could align</span>
+                        <h2>Let's make something <span class="gradient">magical.</span></h2>
+                        <p>Got an idea, collaboration, or just want to say hi? I'd love to hear from you.</p>
+                    </div><a href="mailto:?subject=Hello%20Shayne%20%E2%9C%A8" class="pill primary">Write me a little
+                        note ↗</a>
+                </div>
+                <p class="micro">Site setup note: replace the empty email recipient in the button above with Shayne's
+                    contact email before publishing.</p>
+            </section>
+        </main>
+        <footer class="footer"><span>© <span id="year"></span> Shayne Nicole Lim · Made under the stars
+                ☾</span><span>Keep shining, always. ✦</span></footer>
+    </div>
+    <dialog id="lightbox" aria-label="Project preview">
+        <div class="modal-head">
+            <h3 id="modal-title"></h3><button class="close" id="close-modal"
+                aria-label="Close project preview">×</button>
+        </div>
+        <div class="modal-media" id="modal-media"></div>
+        <div class="modal-caption" id="modal-caption"></div>
+    </dialog>
+    <script>
+        const projects = [
+            ['Mushroom Daydream', '3D', 'A whimsical mushroom world full of gentle magic.', 'mushroom.webp', '3d'],
+            ['Snow Temple', '3D', 'A serene, stylized environment to get lost in.', 'snow-temple.webp', '3d'],
+            ['Little Game City', '3D', 'A miniature city with a world of stories.', 'game-city.webp', '3d'],
+            ['Message in a Bottle', '3D', 'A moody ocean scene with a mysterious message.', 'message-bottle.webp', '3d'],
+            ['The Ice Wolf', '3D', 'A fantasy character model and multi-angle study.', 'ice-wolf.webp', '3d'],
+            ['Funko Pop Character', '3D', 'A stylized collectible-inspired character study.', 'funko.webp', '3d'],
+            ['Frieren Character Study', '3D', 'A character-modeling study.', 'frieren.webp', '3d'],
+            ['Dim Sum World', '3D', 'Little details from a deliciously playful world.', 'dimsum.webp', '3d'],
+            ['Snoopy Study', '3D', 'A cute character modeling exploration.', 'snoopy.webp', '3d'],
+            ['Abstract Playground', '3D', 'Experimenting with shapes, balance, and color.', 'abstract.webp', '3d'],
+            ['Kori — Character Turnaround', 'Character design', 'Meet Kori from every angle.', 'kori-turn.webp', 'characters'],
+            ['Kori — Expressions', 'Character design', 'Exploring personality through expressions.', 'kori-expressions.webp', 'characters'],
+            ['Nuggets — Character Sheet', 'Character design', 'A charming little character in every direction.', 'nuggets.webp', 'characters'],
+            ['Forest Game Assets', 'Pixel art', 'A hand-crafted collection of nature assets.', 'trees.webp', 'characters'],
+            ['Pixel Pals', 'Pixel art', 'A cheerful little fox with lots of personality.', 'fox.webp', 'characters', 'contain'],
+            ['Walk Cycle', '2D animation', 'Character movement study, frame by frame.', 'walkcycle.gif', 'motion', 'contain'],
+            ['Rigged Walk Cycle', '2D animation', 'A playful character brought to life.', 'walkcycle-rig.gif', 'motion', 'contain'],
+            ['Tetris Poster', 'Graphic design', 'Retro energy meets punchy composition.', 'tetris.webp', 'graphics', 'contain'],
+            ['Coffee Poster', 'Graphic design', 'Warm, inviting design for coffee lovers.', 'coffee.webp', 'graphics', 'contain'],
+            ['Debate Poster', 'Graphic design', 'A striking poster designed to start a conversation.', 'debate.webp', 'graphics', 'contain'],
+            ['Webraze House Logo', 'Logo design', 'A fierce logo from the House identity series.', 'webraze.webp', 'graphics', 'contain'],
+            ['Pixelune House Logo', 'Logo design', 'A vibrant pink-and-purple house identity.', 'pixelune.webp', 'graphics', 'contain'],
+            ['Logicore House Logo', 'Logo design', 'A high-energy, tech-inspired emblem.', 'logicore.webp', 'graphics', 'contain'],
+            ['Aegisec House Logo', 'Logo design', 'A bold emblem in electric blue.', 'aegisec.webp', 'graphics', 'contain'],
+            ['Netspire House Logo', 'Logo design', 'A neon-purple emblem.', 'netspire.webp', 'graphics', 'contain'],
+            ['Stickers and Pins', 'Merchandise', 'Small designs made for tangible things.', 'stickers.webp', 'graphics', 'contain'],
+            ['National Heroes Day', 'Social media design', 'A commemorative publication material.', 'hero-day.webp', 'graphics', 'contain'],
+            ['Exams Aftermath', 'Social media design', 'A graphic made for the post-exam mood.', 'aftermath.webp', 'graphics', 'contain'],
+            ['House Registration', 'Social media design', 'Campaign communication with character.', 'house-reg.webp', 'graphics', 'contain'],
+
+            ['House Registration', 'Social media design', 'A registration campaign design.', 'house-reg.webp', 'graphics', 'contain']
+        ];
+        const certs = [['Java Intermediate', 'Certificate', 'SoloLearn achievement in Java programming.', 'cert-java-int.webp', 'cert', 'contain'], ['Introduction to Java', 'Certificate', 'SoloLearn achievement in Java fundamentals.', 'cert-java-intro.webp', 'cert', 'contain'], ['Certificate of Appreciation', 'Certificate', 'Recognition awarded to Shayne Nicole Lim.', 'cert-appreciation.webp', 'cert', 'contain']];
+        function addCard(p) { const [name, type, desc, img, cat, fit] = p; let b = document.createElement('button'); b.className = 'project'; b.dataset.category = cat; if (fit) b.dataset.fit = fit; b.setAttribute('aria-label', 'View ' + name); b.innerHTML = `<div class="thumb"><img loading="lazy" src="assets/${img}" alt="${name}"><span class="view">View ✦</span></div><div class="info"><span class="category">${type}</span><h3>${name}</h3><p>${desc}</p></div>`; b.addEventListener('click', () => openPreview(p)); return b }
+        const gallery = document.querySelector('#gallery'); projects.filter(x => document.querySelector('body') && true).forEach(p => { if (p[3].endsWith('webp') || p[3].endsWith('gif')) gallery.appendChild(addCard(p)) }); certs.forEach(p => document.querySelector('#cert-gallery').appendChild(addCard(p)));
+        document.querySelectorAll('.filter').forEach(btn => btn.addEventListener('click', () => { document.querySelectorAll('.filter').forEach(x => x.setAttribute('aria-pressed', String(x === btn))); document.querySelectorAll('#gallery .project').forEach(card => card.classList.toggle('hidden', btn.dataset.filter !== 'all' && card.dataset.category !== btn.dataset.filter)) }));
+        const dialog = document.getElementById('lightbox'); function openPreview(p) { document.getElementById('modal-title').textContent = p[0]; document.getElementById('modal-caption').textContent = p[2]; const media = document.getElementById('modal-media'); media.replaceChildren(); const img = document.createElement('img'); img.src = 'assets/' + p[3]; img.alt = p[0]; media.appendChild(img); dialog.showModal() } document.getElementById('close-modal').onclick = () => dialog.close(); dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close() });
+        const starfield = document.getElementById('stars'); let seed = 37; function rnd() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646 } for (let i = 0; i < 135; i++) { let s = document.createElement('i'); s.className = 'star'; s.style.left = (rnd() * 100) + '%'; s.style.top = (rnd() * 100) + '%'; let size = rnd() * 2.4 + .6; s.style.width = size + 'px'; s.style.height = size + 'px'; s.style.setProperty('--dur', (rnd() * 4 + 2) + 's'); s.style.setProperty('--delay', (-rnd() * 7) + 's'); starfield.appendChild(s) } document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
